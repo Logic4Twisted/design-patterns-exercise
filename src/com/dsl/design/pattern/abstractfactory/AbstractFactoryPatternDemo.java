@@ -9,16 +9,19 @@ public class AbstractFactoryPatternDemo
 {
     public static void main(String[] args)
     {
-        IHardware mouse = HardwareFactory.create("mouse", true);
+        ExternalFactory gamingFactory = new GamingExternalFactory();
+        ExternalFactory basicFactory = new BasicExternalFactory();
+
+        IHardware mouse = gamingFactory.createMouse();
         mouse.create();
 
-        IHardware mouse2 = HardwareFactory.create("mouse", false);
+        IHardware mouse2 = basicFactory.createMouse();
         mouse2.create();
 
-        IHardware keyboard = HardwareFactory.create("keyboard", true);
+        IHardware keyboard = gamingFactory.createKeyboard();
         keyboard.create();
 
-        IHardware keyboard2 = HardwareFactory.create("keyboard", false);
+        IHardware keyboard2 = basicFactory.createKeyboard();
         keyboard2.create();
     }
 }
