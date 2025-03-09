@@ -17,14 +17,12 @@ public class MoveForward implements IController
     @Override
     public void execute()
     {
-        System.out.println(String.format("%s moved forward", gameCharacter.getName()));
-        gameCharacter.setMoveForwardCount(gameCharacter.getMoveForwardCount() + 1);
+        gameCharacter.moveForward();
     }
 
     @Override
     public void unexecute()
     {
-        System.out.println(String.format("%s unexecuted move forward", gameCharacter.getName()));
-        gameCharacter.setMoveForwardCount(gameCharacter.getMoveForwardCount() - 1);
+        gameCharacter.undoMoveForward();
     }
 }

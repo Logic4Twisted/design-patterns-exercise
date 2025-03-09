@@ -24,48 +24,63 @@ public class GameCharacter
         this.moveBackwardCount = 0;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public int getMoveForwardCount()
-    {
+    public void moveForward() {
+        moveForwardCount++;
+        System.out.println(name + " moved forward");
+    }
+
+    public void moveLeft() {
+        moveLeftCount++;
+        System.out.println(name + " moved left");
+    }
+
+    public void moveRight() {
+        moveRightCount++;
+        System.out.println(name + " moved right");
+    }
+
+    public void moveBackward() {
+        moveBackwardCount++;
+        System.out.println(name + " moved backward");
+    }
+
+    public void undoMoveForward() {
+        moveForwardCount--;
+        System.out.println(name + " undid move forward");
+    }
+
+    public void undoMoveLeft() {
+        moveLeftCount--;
+        System.out.println(name + " undid move left");
+    }
+
+    public void undoMoveRight() {
+        moveRightCount--;
+        System.out.println(name + " undid move right");
+    }
+
+    public void undoMoveBackward() {
+        moveBackwardCount--;
+        System.out.println(name + " undid move backward");
+    }
+
+    public int getMoveForwardCount() {
         return moveForwardCount;
     }
 
-    public void setMoveForwardCount(int moveForwardCount)
-    {
-        this.moveForwardCount = moveForwardCount;
-    }
-
-    public int getMoveLeftCount()
-    {
+    public int getMoveLeftCount() {
         return moveLeftCount;
     }
 
-    public void setMoveLeftCount(int moveLeftCount)
-    {
-        this.moveLeftCount = moveLeftCount;
-    }
-
-    public int getMoveRightCount()
-    {
+    public int getMoveRightCount() {
         return moveRightCount;
     }
 
-    public void setMoveRightCount(int moveRightCount)
-    {
-        this.moveRightCount = moveRightCount;
-    }
-
-    public int getMoveBackwardCount()
-    {
+    public int getMoveBackwardCount() {
         return moveBackwardCount;
-    }
-
-    public void setMoveBackwardCount(int moveBackwardCount)
-    {
-        this.moveBackwardCount = moveBackwardCount;
     }
 }

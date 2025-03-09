@@ -17,14 +17,12 @@ public class MoveLeft implements IController
     @Override
     public void execute()
     {
-        System.out.println(String.format("%s moved left", gameCharacter.getName()));
-        gameCharacter.setMoveLeftCount(gameCharacter.getMoveLeftCount() + 1);
+        gameCharacter.moveLeft();
     }
 
     @Override
     public void unexecute()
     {
-        System.out.println(String.format("%s unexecuted move left", gameCharacter.getName()));
-        gameCharacter.setMoveLeftCount(gameCharacter.getMoveLeftCount() - 1);
+        gameCharacter.undoMoveLeft();
     }
 }

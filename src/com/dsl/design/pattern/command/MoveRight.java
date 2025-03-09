@@ -17,14 +17,12 @@ public class MoveRight implements IController
     @Override
     public void execute()
     {
-        System.out.println(String.format("%s moved right", gameCharacter.getName()));
-        gameCharacter.setMoveRightCount(gameCharacter.getMoveRightCount() + 1);
+        gameCharacter.moveRight();
     }
 
     @Override
     public void unexecute()
     {
-        System.out.println(String.format("%s unexecuted move right", gameCharacter.getName()));
-        gameCharacter.setMoveRightCount(gameCharacter.getMoveRightCount() - 1);
+        gameCharacter.undoMoveRight();
     }
 }
