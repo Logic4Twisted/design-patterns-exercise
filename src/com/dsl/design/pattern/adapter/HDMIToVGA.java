@@ -5,11 +5,19 @@
 
 package com.dsl.design.pattern.adapter;
 
-public class HDMIToVGA implements Converter
+public class HDMIToVGA implements VGA
 {
-    @Override
-    public void convert()
+    HDMI hdmi;
+
+    public HDMIToVGA(HDMI hdmi)
     {
-        System.out.println("Convert HDMI to VGA");
+        this.hdmi = hdmi;
+    }
+
+    @Override
+    public void doVGAStuff()
+    {
+        hdmi.doHDMIStuff();
+        System.out.println("Connect HDMI to VGA");
     }
 }

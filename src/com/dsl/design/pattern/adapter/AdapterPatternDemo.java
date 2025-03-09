@@ -5,14 +5,15 @@
 
 package com.dsl.design.pattern.adapter;
 
+
 public class AdapterPatternDemo
 {
     public static void main(String[] args)
     {
-        Adaptor adaptor = new Adaptor(new HDMIToVGA());
-        adaptor.convert();
+        VGA adaptor = new HDMIToVGA(new HDMIImpl());
+        adaptor.doVGAStuff();
 
-        Adaptor adaptor2 = new Adaptor(new VGAToHDMI());
-        adaptor2.convert();
+        HDMI adaptor2 = new VGAToHDMI(new VGAImpl());
+        adaptor2.doHDMIStuff();
     }
 }
